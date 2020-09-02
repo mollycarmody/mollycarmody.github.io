@@ -1,0 +1,559 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <!--    sticky scrolling-->
+    <script src="https://unpkg.com/enter-view"></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="experimental_interface_style.css">
+    <link rel="stylesheet" type="text/css" href="greyscale_style.css">
+    <!--
+     Font Awesome 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+-->
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--     Material Design Bootstrap -->
+    <!--    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">-->
+
+
+
+
+
+
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!--
+     MDB core JavaScript 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+-->
+</head>
+
+<body class="grid">
+
+    <script>
+        $(window).on("load", function() {
+            $(window).scroll(function() {
+                var windowBottom = $(this).scrollTop() + $(this).innerHeight();
+                $(".fade").each(function() {
+                    /* Check the location of each desired element */
+                    //                    var objectBottom = $(this).offset().top + $(this).outerHeight();
+                    var $this = $(this);
+                    var offset = $this.offset();
+                    var height = $this.outerHeight();
+                    var centerY = offset.top + height / 2;
+
+                    /* If the element is completely within bounds of the window, fade it in */
+                    if (centerY <= windowBottom) { //object comes into view (scrolling down)
+                        if ($(this).css("opacity") == 0) {
+                            $(this).fadeTo(500, 1);
+                            $(this).find('.text-animate').addClass('animate-start');
+                        }
+                    } else { //object goes out of view (scrolling up)
+                        if ($(this).css("opacity") == 1) {
+                            $(this).fadeTo(500, 0);
+                            $(this).find('.text-animate').removeClass('animate-start');
+                        }
+                    }
+                });
+            }).scroll(); //invoke scroll-handler on page-load
+        });
+        //        $(document).ready(function() {
+        //            $('.technology-frontCard').mouseenter(function(e) {
+        //                fade($('.technology-frontCard'));
+        //                $('.technology-frontCard').replaceWith($('.technology-backCard').show()).fadeIn('slow');
+        //            });
+        //        });
+        //        $('.technology-backCard').mouseleave(function(e) {
+        //        console.log("mouse leaving");
+        //        $('.technology-backCard').fadeOut('slow', function() {
+        //            $('.technology-backCard').replaceWith($('.technology-frontCard').show()).fadeIn('slow');
+        //        });
+        //        });
+        //
+        //        });
+
+    </script>
+    <!--PowerPoint-->
+    <section>
+        <div class="powerPoint row fade">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="9"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="10"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="11"></li>
+
+                </ol>
+
+                <!--Slides-->
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img class="img-fluid" src='experimental_interface_media/Slide1.png' />
+                    </div>
+                    <div class="carousel-item">
+                        <img class="img-fluid" src='experimental_interface_media/Slide2.png' />
+                    </div>
+                    <div class="carousel-item">
+                        <img class="img-fluid" src='experimental_interface_media/Slide3.png' />
+                    </div>
+                    <div class="carousel-item">
+                        <img class="img-fluid" src='experimental_interface_media/Slide4.png' />
+                    </div>
+                    <div class="carousel-item">
+                        <img class="img-fluid" src='experimental_interface_media/Slide5.png' />
+                    </div>
+                    <div class="carousel-item">
+                        <video class="video-fluid" autoplay loop muted>
+                            <source src="./experimental_interface_media/slide6.mp4" type="video/mp4" />
+                        </video>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="img-fluid" src='experimental_interface_media/Slide7.png' />
+                    </div>
+                    <div class="carousel-item">
+                        <video class="video-fluid" autoplay loop muted>
+                            <source src="./experimental_interface_media/slide8.mp4" type="video/mp4" />
+                        </video>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="img-fluid" src='experimental_interface_media/Slide9.png' />
+                    </div>
+                    <div class="carousel-item">
+                        <img class="img-fluid" src='experimental_interface_media/Slide10.png' />
+                    </div>
+                    <div class="carousel-item">
+                        <video class="video-fluid" autoplay loop muted>
+                            <source src="./experimental_interface_media/slide11.mp4" type="video/mp4" />
+                        </video>
+                    </div>
+                    <div class="carousel-item">
+                        <video class="video-fluid" autoplay loop muted>
+                            <source src="./experimental_interface_media/slide12.mp4" type="video/mp4" />
+                        </video>
+                    </div>
+                    <div class="carousel-item">
+                        <video class="video-fluid" autoplay loop muted>
+                            <source src="./experimental_interface_media/slide13.mp4" type="video/mp4" />
+                        </video>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="img-fluid" src='experimental_interface_media/Slide14.png' />
+                    </div>
+                    <div class="carousel-item">
+                        <img class="img-fluid" src='experimental_interface_media/Slide15.png' />
+                    </div>
+                    <div class="carousel-item">
+                        <img class="img-fluid" src='experimental_interface_media/Slide16.png' />
+                    </div>
+                    <div class="carousel-item">
+                        <img class="img-fluid" src='experimental_interface_media/Slide17.png' />
+                    </div>
+
+
+                </div>
+                <!--/.Slides-->
+
+                <!--/.Arrows-->
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!--/.PowerPoint-->
+    <!--Overall-->
+    <section>
+        <div class="overall-container fade">
+            <div class="row">
+                <h1 class="text-animate ml15">
+                    <span class="word">Feel the Music</span>
+                    <span class="word">Literally</span>
+                </h1>
+            </div>
+            <div class="row">
+                <div class="spinner">
+                    <a target="_blank" href="http://people.duke.edu/~mkc35/midterm_Project/Experimental/public_html/startPage.html">
+                        <div class="double-bounce1"></div>
+                        <div class="double-bounce2"></div>
+                        <div class="double-bounce3"></div>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!--/.Overall-->
+    <section class="section-header">
+        <div class="row fade">
+            <div class="technology-header col-sm-12">
+                <h1 class="technology-header_h1 text-animate ml12">Ultrahaptic Technology</h1>
+            </div>
+
+        </div>
+        <div class="technology-header_image"><img class="technology-img-waves" src='./img/wave-cropped.gif'></div>
+        <div class="row arrow-container">
+            <div class="arrow">
+                <div class="arrow-top"></div>
+                <div class="arrow-bottom"></div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <!--Technology section-->
+    <section>
+        <div class="technology-container">
+            <div class="row fade">
+                <div class="technology-subheader col-sm-12">
+                    <h3>Ultrahaptic Technology uses ultrasound to create 3D shapes and textures that are felt but not seen
+                    </h3>
+                </div>
+
+            </div>
+            <div id='scrolly-overlay'>
+                <div class='scrolly'>
+                    <figure class='fade sticky'>
+                        <div class="row">
+                            <div class="technology-contentMedia col-sm-12">
+                                <div class="technology-contentCount col-sm-4" id="count1">1</div>
+                                <div class="technology-contentCount col-sm-4" id="count2">2</div>
+                                <div class="technology-contentCount col-sm-4" id="count3">3</div>
+                            </div>
+                        </div>
+                    </figure>
+
+                    <div class="technology-content col-sm-6">
+                        <!--
+
+                    <div class="card-container">
+                        <div class="card-flip">
+-->
+
+                        <!--
+                    <div class="technology-frontCard">
+                                                        <div class="technology-frontCard_image"><img class="technology-img-waves" src='./img/wave-cropped.gif'></div>
+
+                    </div>
+-->
+
+                        <article>
+                            <div class='step' id="activedDiv1">
+                                <div class=" flyInBottom hvr-overline-from-center card technology-backCard_bubble " id="bubble1">
+                                    <div class="card-body">Array of ultrasonic transducers and signal processing algorithms create focal points of ultrasonic energy on palms or fingers
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='step' id="activedDiv2">
+                                <div class="flyInBottom hvr-overline-from-center card technology-backCard_bubble" id="bubble2">
+                                    <div class="card-body">When the ultrasound is focused onto the surface of the skin, it induces a shear wave in skin tissue</div>
+                                </div>
+                            </div>
+                            <div class='step' id="activedDiv3">
+                                <div class="flyInBottom hvr-overline-from-center card technology-backCard_bubble " id="bubble3">
+                                    <div class="card-body">Displacement from the wave triggers mechanoreceptors within the skin — and that induces a haptic sensation, a.k.a a physical feeling of texture/surfaces on your hand.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <!--
+                        </div>
+                    </div>
+-->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/.Technology section-->
+
+    <!--Interfaces-->
+    <section>
+        <div class="interfaces-container">
+            <div class="row fade">
+                <div class="interfaces-header col-sm-12">
+                    <h1>Interfaces</h1>
+                </div>
+            </div>
+            <div class="row fade">
+                <div class="col-sm-6">
+                    <div class="interfaces-media">
+                        3D Model or Image Here. Can maybe zom into one when hover over box.
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="interfaces-descriptions">
+                        <div class="d-overall-container">
+                            <div class="d-container">
+                                <div class="d-front d-side">
+                                    <div class="d-content">
+                                        <h1>Hakkam Abdullah</h1>
+                                        <p>I am a graphic designer and art director. I am as well specialised in front end web design, user experience and creating identities. Throughout my career, I have worked with companies of all shapes and sizes that enriched my experience
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="d-back d-side">
+                                    <div class="d-content">
+                                        <h1>Contact Me</h1>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-overall-container">
+                        <div class="d-container">
+                            <div class="d-front d-side">
+                                <div class="d-content">
+                                    <h1>Hakkam Abdullah</h1>
+                                    <p>I am a graphic designer and art director. I am as well specialised in front end web design, user experience and creating identities. Throughout my career, I have worked with companies of all shapes and sizes that enriched my experience
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="d-back d-side">
+                                <div class="d-content">
+                                    <h1>Contact Me</h1>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!--/.Interfaces-->
+
+    <!--Object-->
+    <!--    maybe have hover over each section and says like website what you see what you feel-->
+    <section>
+        <div class="object-container fade">
+            <div class="row">
+                <div class="object-header col-sm-12">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="object-site col-sm-12">
+                    <embed src="http://people.duke.edu/~mkc35/midterm_Project/Experimental/public_html/startPage.html">
+                </div>
+            </div>
+            <div class="row">
+                <div class="object-3dsite col-sm-12">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/.-->
+    <!--Screen-->
+    <section>
+        <div class="d-overall-container fade">
+            <div class="d-container">
+                <div class="d-front d-side">
+                    <div class="d-content">
+                        <h1>Hakkam Abdullah</h1>
+                        <p>I am a graphic designer and art director. I am as well specialised in front end web design, user experience and creating identities. Throughout my career, I have worked with companies of all shapes and sizes that enriched my experience
+                        </p>
+                    </div>
+                </div>
+                <div class="d-back d-side">
+                    <div class="d-content">
+                        <h1>Contact Me</h1>
+                        <form>
+                            <label>Your Name :</label>
+                            <input type="text" placeholder="Omar Khattab">
+                            <label>Your E-mail :</label>
+                            <input type="text" placeholder="Example@mail.com">
+                            <label>Your message :</label>
+                            <textarea placeholder="The Subject"></textarea>
+                            <input type="submit" value="Done">
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!--/.-->
+    <!---->
+    <!--
+    <section>
+        <div class="interfaces-container">
+        </div>
+    </section>
+-->
+    <!--/.-->
+    <script>
+        $(document).ready(function() {
+            
+            function changeDivtoActive(idDiv){
+                var div1 = $('#count1');
+                var div2 = $('#count2');
+                var div3 = $('#count3');
+                if (idDiv == 'activedDiv1') {
+                    if (!div1.hasClass('active')) {
+                        console.log("div1");
+                        div1.addClass('active');
+                    }
+                    if (div2.hasClass('active')) {
+                        div2.removeClass('active');
+                    }
+                    if (div3.hasClass('active')) {
+                        div3.removeClass('active');
+                    }
+
+                    //console.log('100');
+
+
+                } else if (idDiv == 'activedDiv2') {
+                    if (div1.hasClass('active')) {
+
+                        div1.removeClass('active');
+                    }
+                    if (!div2.hasClass('active')) {
+                        console.log("div2");
+                        div2.addClass('active');
+                    }
+                    if (div3.hasClass('active')) {
+                        div3.removeClass('active');
+                    }
+                    //console.log('200');
+                } else if (idDiv == 'activedDiv3') {
+                    if (!div3.hasClass('active')) {
+                        console.log("div1");
+                        div3.addClass('active');
+                    }
+                    if (div2.hasClass('active')) {
+                        div2.removeClass('active');
+                    }
+                    if (div1.hasClass('active')) {
+                        div1.removeClass('active');
+                    }
+
+                    //console.log('300');
+
+                }
+            }
+            $(window).scroll(function() {
+                
+                //console.log('in scroll function');
+                
+                var wTop = $(window).scrollTop();
+                var elementOffset = $('.technology-subheader').offset().top;
+               var distance = (elementOffset - wTop);
+                var thirdScrollyd = $('#scrolly-overlay').height()*(-1/3);
+                console.log(distance);
+                
+                var windowHeight = $(window).height(),
+    gridTop = windowHeight * .3,
+    gridBottom = windowHeight * .6;
+$('.step').each(function() {
+      var thisTop = $(this).offset().top - $(window).scrollTop(); // Get the `top` of this `li`
+
+      // Check if this element is in the interested viewport
+      if (thisTop >= gridTop && (thisTop + $(this).height()) <= gridBottom) {
+          console.log($(this).attr('id'));
+          $(this).css('color', 'red');
+        changeDivtoActive($(this).attr('id'));
+      } else {
+        $(this).css('color', 'black');
+      }
+    });
+                
+                //console.log(distance);
+               // console.log('scrolly d' + thirdScrollyd);
+                
+            });
+        });
+
+    </script>
+    <script>
+        // Wrap every letter in a span
+        var textWrapper = document.querySelector('.ml12');
+        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+        anime.timeline({
+                loop: true
+            })
+            .add({
+                targets: '.ml12.animate-start .letter',
+                translateX: [40, 0],
+                translateZ: 0,
+                opacity: [0, 1],
+                easing: "easeOutExpo",
+                duration: 1200,
+                delay: (el, i) => 500 + 30 * i
+            }).add({
+                targets: '.ml12.animate-start .letter',
+                translateX: [0, -30],
+                opacity: [1, 0],
+                easing: "easeInExpo",
+                duration: 1100,
+                delay: (el, i) => 1000 + 30 * i
+            });
+        anime.timeline({
+                loop: true
+            })
+            .add({
+                targets: '.ml15.animate-start .word',
+                scale: [14, 1],
+                opacity: [0, 1],
+                easing: "easeOutCirc",
+                duration: 2000,
+                delay: (el, i) => 800 * i
+            }).add({
+                targets: '.ml15.animate-start',
+                opacity: 0,
+                duration: 2000,
+                easing: "easeOutExpo",
+                delay: 5000
+            });
+
+    </script>
+</body>
+
+</html>
