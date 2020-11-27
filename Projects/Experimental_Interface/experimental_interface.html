@@ -17,6 +17,16 @@
     <script src="https://unpkg.com/enter-view"></script>
     <script src="https://d3js.org/d3.v6.min.js"></script>
 
+    <!--    3d model-->
+    <script src="./js/three.min.js"></script>
+    <script src="./js/three-obj-loader.min.js"></script>
+    <script src="./js/model-element.min.js"></script>
+    <script src="./js/custom-element-polyfill.min.js"></script>
+
+    <!--    air-->
+    <!--    <script src="./js/demo.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="css.css">
+
     <link rel="stylesheet" type="text/css" href="experimental_interface_style.css">
     <link rel="stylesheet" type="text/css" href="greyscale_style.css">
     <!--
@@ -218,6 +228,16 @@
         </div>
     </section>
     <!--/.Overall-->
+    <!--idea-->
+    <section>
+        <div class="idea-container fade">
+            <div class="idea-explanation">When we think of music or sound, we think of hearing the frequency, the notes, the volume, the beat. The data of sound passes through our ear drums and is translated by our brain into conviceibale bytes of information: lyrics, melodies, harmonies, stories. What if, beyond simply hearing or feeling the vibrations of sound, we could touch sound?
+
+                <br /><br />By using ultra haptic technology and mapping sound to physical properties, we can create a representation of sound in physical form. Music becomes a calculated, representative physical "object". So, we can feel the music, literally.</div>
+        </div>
+    </section>
+
+
     <section class="section-header">
         <div class="row fade">
             <div class="technology-header col-sm-12">
@@ -247,19 +267,31 @@
                 </div>
 
             </div>
+            <div class="row fade">
+
+            </div>
             <div id='scrolly-overlay'>
                 <div class='scrolly'>
-                    <figure class='fade sticky'>
-                        <div class="row">
-                            <div class="technology-contentMedia col-sm-12">
-                                <div class="technology-contentCount col-sm-4" id="count1">1</div>
-                                <div class="technology-contentCount col-sm-4" id="count2">2</div>
-                                <div class="technology-contentCount col-sm-4" id="count3">3</div>
+
+
+                    <div class="technology-contentMedia sticky grid">
+                        <div class="row steps-row">
+                            <div class="col-sm-2 technology-stepsHeader">
+                                <h1>How it Works</h1>
+                            </div>
+                            <div class="col-sm-10">
+                                <div class="row">
+                                    <div class="technology-contentCount col-sm-4" id="count1">1</div>
+                                    <div class="technology-contentCount col-sm-4" id="count2">2</div>
+                                    <div class="technology-contentCount col-sm-4" id="count3">3</div>
+                                </div>
                             </div>
                         </div>
-                    </figure>
+                    </div>
 
-                    <div class="technology-content col-sm-6">
+
+
+                    <div class="technology-content">
                         <!--
 
                     <div class="card-container">
@@ -273,25 +305,25 @@
                     </div>
 -->
 
-                        <article>
-                            <div class='step' id="activedDiv1">
-                                <div class=" flyInBottom hvr-overline-from-center card technology-backCard_bubble " id="bubble1">
-                                    <div class="card-body">Array of ultrasonic transducers and signal processing algorithms create focal points of ultrasonic energy on palms or fingers
-                                    </div>
-                                </div>
+
+
+                        <div class=" flyInBottom card technology-backCard_bubble " id="bubble1">
+                            <div class="cardCheck card-body" id="activedDiv1">Array of ultrasonic transducers and signal processing algorithms create focal points of ultrasonic energy on palms or fingers
                             </div>
-                            <div class='step' id="activedDiv2">
-                                <div class="flyInBottom hvr-overline-from-center card technology-backCard_bubble" id="bubble2">
-                                    <div class="card-body">When the ultrasound is focused onto the surface of the skin, it induces a shear wave in skin tissue</div>
-                                </div>
+                        </div>
+
+
+                        <div class="flyInBottom card technology-backCard_bubble" id="bubble2">
+                            <div class="cardCheck card-body" id="activedDiv2">When the ultrasound is focused onto the surface of the skin, it induces a shear wave in skin tissue</div>
+                        </div>
+
+
+                        <div class="flyInBottom card technology-backCard_bubble " id="bubble3">
+                            <div class="cardCheck card-body" id="activedDiv3">Displacement from the wave triggers mechanoreceptors within the skin — and that induces a haptic sensation, a.k.a a physical feeling of texture/surfaces on your hand.
                             </div>
-                            <div class='step' id="activedDiv3">
-                                <div class="flyInBottom hvr-overline-from-center card technology-backCard_bubble " id="bubble3">
-                                    <div class="card-body">Displacement from the wave triggers mechanoreceptors within the skin — and that induces a haptic sensation, a.k.a a physical feeling of texture/surfaces on your hand.
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
+                        </div>
+
+
                         <!--
                         </div>
                     </div>
@@ -306,61 +338,65 @@
 
     <!--Interfaces-->
     <section>
+        <!--
         <div class="interfaces-container">
+            Interfaces Section Title
             <div class="row fade">
                 <div class="interfaces-header col-sm-12">
                     <h1>Interfaces</h1>
                 </div>
             </div>
-            <div class="row fade">
+-->
+        <!--3D Model + Interfaces Descriptions-->
+        <!--            <div class="row fade">-->
+        <!--3D Model-->
+        <!--
                 <div class="col-sm-6">
                     <div class="interfaces-media">
-                        3D Model or Image Here. Can maybe zom into one when hover over box.
+-->
+        <!--                        <embed src="./3d_Scene.html"/>-->
+        <!--
+                        <div class="obj3d" id="scene">
+                            <div class="obj3d room" id="room">
+                                <x-model class="obj3d model" src="./img/tinker.obj"></x-model>
+                                <div class="obj3d room__floor"></div>
+                            </div>
+                        </div>
+-->
+        <!--
                     </div>
                 </div>
+-->
+        <!--                Interfaces Description cards-->
+        <!--
                 <div class="col-sm-6">
                     <div class="interfaces-descriptions">
-                        <div class="d-overall-container">
-                            <div class="d-container">
-                                <div class="d-front d-side">
-                                    <div class="d-content">
-                                        <h1>Hakkam Abdullah</h1>
-                                        <p>I am a graphic designer and art director. I am as well specialised in front end web design, user experience and creating identities. Throughout my career, I have worked with companies of all shapes and sizes that enriched my experience
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Screen</h5>
+                                        <p class="card-text">With the screen, you can change the song and manipulate its sound (volume, frequency, tone).
                                         </p>
                                     </div>
                                 </div>
-                                <div class="d-back d-side">
-                                    <div class="d-content">
-                                        <h1>Contact Me</h1>
-
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
-                    </div>
-
-                    <div class="d-overall-container">
-                        <div class="d-container">
-                            <div class="d-front d-side">
-                                <div class="d-content">
-                                    <h1>Hakkam Abdullah</h1>
-                                    <p>I am a graphic designer and art director. I am as well specialised in front end web design, user experience and creating identities. Throughout my career, I have worked with companies of all shapes and sizes that enriched my experience
-                                    </p>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Object</h5>
+                                        <p class="card-text">With the object, you can feel the resulting object - created by the ultrasound waves - that represents this sound</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="d-back d-side">
-                                <div class="d-content">
-                                    <h1>Contact Me</h1>
-
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+-->
 
     </section>
 
@@ -368,55 +404,208 @@
     <!--/.Interfaces-->
 
     <!--Object-->
-    <!--    maybe have hover over each section and says like website what you see what you feel-->
-    <section>
+    <!--    maybe have hover over each section and says like website what you see what you feel. Switch button between 3d model + 2d site-->
+    <!--    <section>-->
+    <!--
         <div class="object-container fade">
             <div class="row">
                 <div class="object-header col-sm-12">
 
                 </div>
+
             </div>
             <div class="row">
-                <div class="object-site col-sm-12">
-                    <embed src="http://people.duke.edu/~mkc35/midterm_Project/Experimental/public_html/startPage.html">
+                <div class="object-switch col-sm-12">
+                    <button class="object-switch_button">SWITCH</button>
+                </div>
+                <div class="object-dimension col-sm-12">
+                    <div class="object-dimension-3D">
+                        <img class="frame-1" />
+                        <img class="frame-2" />
+                        <img class="frame-3" />
+                        <img class="frame-4" />
+                    </div>
+                    <div class="object-dimension-site">
+                        <embed class="frame-1" src="http://people.duke.edu/~mkc35/midterm_Project/Experimental/public_html/startPage.html">
+                        <embed class="frame-2" src="http://people.duke.edu/~mkc35/midterm_Project/Experimental/public_html/startPage.html">
+                        <embed class="frame-3" src="http://people.duke.edu/~mkc35/midterm_Project/Experimental/public_html/startPage.html">
+                        <embed class="frame-4" src="http://people.duke.edu/~mkc35/midterm_Project/Experimental/public_html/startPage.html">
+                    </div>
+
+                </div>
+
+            </div>
+-->
+    <script>
+        var frameNum
+
+        function checkFrame() {
+            //if object dimension site 
+            //switch embed src -- how get current site url? active
+            //case = startpage.html
+            //return 1
+            //case = nonbraillepage.html
+            //return 2
+            //case = braillepage.html -- smae page, create diff in url?
+            //return 3
+            //case = object.html
+            //return 4
+            //else aka object dimension 2d
+            //return element.class
+        }
+
+        function switchFrame() {
+            //hide current
+            //show other at correct framenum
+        }
+
+    </script>
+
+    <!--
+
+        </div>
+    </section>
+-->
+    <!--/.-->
+    <!--Map-->
+    <section>
+        <div class="map-container">
+            <button class="map-accordion">Volume --> Volume</button>
+            <div class="map-panel">
+                <p>The volume - how loud the music or sound - is directly proportional to the volume - the size of the shape created via ultrahaptics.</p>
+            </div>
+
+            <button class="map-accordion">Frequency --> Edge Radius</button>
+            <div class="map-panel">
+                <p>Domain: 40Hz to 10kHz
+                <br/>Range: 0% to 100%
+                </p>
+                <p>Edge radius % = (-100/9960) * (freq. HZ) + 100.40161</p>
+            </div>
+
+            <button class="map-accordion">Beat --> Vibration</button>
+            <div class="map-panel">
+                <p>Domain: 0 to 100 vol.
+                <br/>Range: 33 in3 to 123 in3
+                </p>
+                <p>In3 = 17.01 * vol. + 27
+                </p>
+            </div>
+            <button class="map-accordion">Feeling --> Texture</button>
+            <div class="map-panel">
+                <p>Mapping of feelings to texture will involve rounds of experimentation to determine how to best:
+                </p>
+                <ol>
+                    <li>classify emotions of song</li>
+                    <li>map emotion to texture</li>
+                    <li>represent textures through ultrasound waves</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+    <!--/.Map-->
+
+    <!--Rod-->
+    <section>
+        <div class="rod-container">
+            <div class="rod-row row">
+                <div class="rod-rotating col">
+                    <video class="video-fit" autoplay loop muted>
+                        <source src="./experimental_interface_media/rotating_rod.mp4" type="video/mp4" />
+                    </video>
+                </div>
+                <div class="rod-description col">
+                    <div class="row">The "rod" emits from its top ultrasound waves that bound out from the center to create the 3D representation of an object, in "ultrasound wave form".
+                        <div class="rod-description_final">BIGGERThe utlrasound waves create the feeling of touching a physical, changing object, even though none is actually present or visible.</div>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="object-3dsite col-sm-12">
+
+            <div class="shifting-row row">
+                <div class="shifting-description col-sm-5">
+                    <div class="row">The representation above is of a circle, but the "object" could be any constantly shifting shape with constantly changing texture, volume, dimensions, all in accordance with the sound it represents.
+                        <div class="shifting-description_final">BIGGERThe invisible "object" - its textures, edges, faces - is FELT via the ultrasound waves. </div>
+                    </div>
+                </div>
+                <div class="shifting-gif col-sm-7">
+                    <img class="shifting-gif_image" src="./experimental_interface_media/shifting_shape.gif" />
+
                 </div>
             </div>
         </div>
     </section>
-    <!--/.-->
-    <!--Screen-->
+    <!--/.Rod-->
+    <!--Benefits-->
     <section>
-        <div class="d-overall-container fade">
-            <div class="d-container">
-                <div class="d-front d-side">
-                    <div class="d-content">
-                        <h1>Hakkam Abdullah</h1>
-                        <p>I am a graphic designer and art director. I am as well specialised in front end web design, user experience and creating identities. Throughout my career, I have worked with companies of all shapes and sizes that enriched my experience
-                        </p>
+        <div class="benefits-container">
+            <div class="row">
+                <div class="benefits-header-1 col-sm-7">
+                    <video class="video-fluid" autoplay loop muted>
+                        <source src="./experimental_interface_media/braille_screen.mp4" type="video/mp4" />
+                    </video>
+                </div>
+                <div class="benefits-header-2 col-sm-5">
+                    <div class="benefits-header-2_title">
+                        <div class="benefits-header-2_title_1">Revolutionize</div>
+                        <div class="benefits-header-2_title_2">the digital</div>
+                        <div class="benefits-header-2_title_3">senses...</div>
+                    </div>
+
+                    <div class="benefits-examples">
+                        <div class="benefits-example-1_title">Accessibility</div>
+                        <div class="benefits-example-1_description">
+                            braille, those previously exclude because of total or limited site.
+                        </div>
+                        <div class="benefits-example-2_title">Reality</div>
+                        <div class="benefits-example-2_description">
+                            the sleek, cold of digital screen can now match the 3 dimensional, textured
+                        </div>
+                        <div class="benefits-example-3_title">Oppurtunitiy</div>
+                        <div class="benefits-example-3_description">
+                            can show more kinds of objects + interaces (Ex: can feel what a tetture is when pickingout a fabric, digital handshake etc.)
+                        </div>
                     </div>
                 </div>
-                <div class="d-back d-side">
-                    <div class="d-content">
-                        <h1>Contact Me</h1>
-                        <form>
-                            <label>Your Name :</label>
-                            <input type="text" placeholder="Omar Khattab">
-                            <label>Your E-mail :</label>
-                            <input type="text" placeholder="Example@mail.com">
-                            <label>Your message :</label>
-                            <textarea placeholder="The Subject"></textarea>
-                            <input type="submit" value="Done">
-                        </form>
+            </div>
+        </div>
+
+
+
+
+
+    </section>
+    <!--/.Benefits-->
+    <!--Screen-->
+    <section>
+        <!--
+            <div class="d-overall-container fade">
+                <div class="d-container">
+                    <div class="d-front d-side">
+                        <div class="d-content">
+                            <h1>Hakkam Abdullah</h1>
+                            <p>I am a graphic designer and art director. I am as well specialised in front end web design, user experience and creating identities. Throughout my career, I have worked with companies of all shapes and sizes that enriched my experience
+                            </p>
+                        </div>
                     </div>
+                    <div class="d-back d-side">
+                        <div class="d-content">
+                            <h1>Contact Me</h1>
+                            <form>
+                                <label>Your Name :</label>
+                                <input type="text" placeholder="Omar Khattab">
+                                <label>Your E-mail :</label>
+                                <input type="text" placeholder="Example@mail.com">
+                                <label>Your message :</label>
+                                <textarea placeholder="The Subject"></textarea>
+                                <input type="submit" value="Done">
+                            </form>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
-
-        </div>
+-->
     </section>
     <!--/.-->
     <!---->
@@ -427,10 +616,29 @@
     </section>
 -->
     <!--/.-->
+
+    <script>
+        var acc = document.getElementsByClassName("map-accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("map-active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+
+    </script>
+
     <script>
         $(document).ready(function() {
-            
-            function changeDivtoActive(idDiv){
+
+            function changeDivtoActive(idDiv) {
                 var div1 = $('#count1');
                 var div2 = $('#count2');
                 var div3 = $('#count3');
@@ -479,35 +687,52 @@
                 }
             }
             $(window).scroll(function() {
-                
+
                 //console.log('in scroll function');
-                
+
                 var wTop = $(window).scrollTop();
                 var elementOffset = $('.technology-subheader').offset().top;
-               var distance = (elementOffset - wTop);
-                var thirdScrollyd = $('#scrolly-overlay').height()*(-1/3);
-                console.log(distance);
-                
-                var windowHeight = $(window).height(),
-    gridTop = windowHeight * .3,
-    gridBottom = windowHeight * .6;
-$('.step').each(function() {
-      var thisTop = $(this).offset().top - $(window).scrollTop(); // Get the `top` of this `li`
-
-      // Check if this element is in the interested viewport
-      if (thisTop >= gridTop && (thisTop + $(this).height()) <= gridBottom) {
-          console.log($(this).attr('id'));
-          $(this).css('color', 'red');
-        changeDivtoActive($(this).attr('id'));
-      } else {
-        $(this).css('color', 'black');
-      }
-    });
-                
+                var distance = (elementOffset - wTop);
+                var thirdScrollyd = $('#scrolly-overlay').height() * (-1 / 3);
                 //console.log(distance);
-               // console.log('scrolly d' + thirdScrollyd);
-                
+
+                var windowHeight = $(window).height(),
+                    gridTop = windowHeight * .3,
+                    gridBottom = windowHeight * .6;
+
+                $('.cardCheck').each(function() {
+                    var thisTop = $(this).offset().top - $(window).scrollTop(); // Get the `top` of this `li`
+
+                    // Check if this element is in the interested viewport
+                    if (thisTop >= gridTop && (thisTop + $(this).height()) <= gridBottom) {
+                        console.log($(this).attr('id'));
+                        console.log('in view');
+                        changeDivtoActive($(this).attr('id'));
+                    } else {}
+                });
+
+                //console.log(distance);
+                // console.log('scrolly d' + thirdScrollyd);
+
             });
+        });
+
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            function showBenefits() {
+                console.log("benefits hovered!!)")
+                $('.benefits-header-2_title').css("display", "none");
+                $('.benefits-examples').css("display", "grid");
+            }
+
+            function hideBenefits() {
+                $('.benefits-examples').css("display", "none");
+                $('.benefits-header-2_title').css("display", "grid");
+            }
+            $('.benefits-header-2').hover(showBenefits, hideBenefits);
+
         });
 
     </script>
