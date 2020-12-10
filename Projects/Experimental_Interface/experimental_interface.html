@@ -470,36 +470,101 @@
     <!--Map-->
     <section>
         <div class="map-container">
-            <button class="map-accordion">Volume --> Volume</button>
-            <div class="map-panel">
-                <p>The volume - how loud the music or sound - is directly proportional to the volume - the size of the shape created via ultrahaptics.</p>
+            <div class="row">
+                <div class="map-header">big block letter Mapping Sound
+                    <br />big arrow to Physical Properties</div>
+                <!--                <div class="map-imager">some sort of imagery mapping object + sound. fade in fade out of beat and object??</div>-->
             </div>
+            <div class="row">
+                <div class="map-details">
+                    <div class="map-accordion">
+                        <div class="map-accordion_item">
+                            <div class="map-accordion_title_1">
+                                <div class="map-accordion_text_1">Volume</div>
+                            </div>
+                            <div class="map-accordion_title">
+                                <div class="map-accordion_text">Volume</div>
+                            </div>
+                            <div class="map-accordion_content">The volume - how loud the music or sound - is directly proportional to the volume - the size of the shape created via ultrahaptics.</div>
+                        </div>
+                        <div class="map-accordion_item">
+                            <div class="map-accordion_title_1">
+                                <div class="map-accordion_text_1">Frequency</div>
+                            </div>
+                            <div class="map-accordion_title">
+                                <div class="map-accordion_text">Edge Radius</div>
+                            </div>
+                            <div class="map-accordion_content">40Hz to 10kHz
+                                <br />Range: 0% to 100% Edge radius % = (-100/9960) * (freq. HZ) + 100.40161</div>
+                        </div>
+                        <div class="map-accordion_item">
+                            <div class="map-accordion_title_1">
+                                <div class="map-accordion_text_1">Beat</div>
+                            </div>
+                            <div class="map-accordion_title">
+                                <div class="map-accordion_text">Vibrations</div>
+                            </div>
+                            <div class="map-accordion_content">
+                                <p>Domain: 0 to 100 vol.
+                                    <br/>Range: 33 in3 to 123 in3
 
-            <button class="map-accordion">Frequency --> Edge Radius</button>
-            <div class="map-panel">
-                <p>Domain: 40Hz to 10kHz
-                <br/>Range: 0% to 100%
-                </p>
-                <p>Edge radius % = (-100/9960) * (freq. HZ) + 100.40161</p>
-            </div>
+                                    In3 = 17.01 * vol. + 27
+                            </p>
+                            </div>
+                            
+                        </div>
+                        <div class="map-accordion_item">
+                            <div class="map-accordion_title_1">
+                                <div class="map-accordion_text_1">Feeling</div>
+                            </div>
+                            <div class="map-accordion_title">
+                                <div class="map-accordion_text">Texture</div>
+                            </div>
+                            <div class="map-accordion_content">
+                                <p>Mapping of feelings to texture will involve rounds of experimentation to determine how to best:
+                        </p>
+                        <ol>
+                            <li>classify emotions of song</li>
+                            <li>map emotion to texture</li>
+                            <li>represent textures through ultrasound waves</li>
+                        </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <!--
+                    <button class="map-accordion">Volume Volume</button>
+                    <div class="map-panel">
+                        <p>The volume - how loud the music or sound - is directly proportional to the volume - the size of the shape created via ultrahaptics.</p>
+                    </div>
 
-            <button class="map-accordion">Beat --> Vibration</button>
-            <div class="map-panel">
-                <p>Domain: 0 to 100 vol.
-                <br/>Range: 33 in3 to 123 in3
-                </p>
-                <p>In3 = 17.01 * vol. + 27
-                </p>
-            </div>
-            <button class="map-accordion">Feeling --> Texture</button>
-            <div class="map-panel">
-                <p>Mapping of feelings to texture will involve rounds of experimentation to determine how to best:
-                </p>
-                <ol>
-                    <li>classify emotions of song</li>
-                    <li>map emotion to texture</li>
-                    <li>represent textures through ultrasound waves</li>
-                </ol>
+                    <button class="map-accordion">Frequency  Edge Radius</button>
+                    <div class="map-panel">
+                        <p>Domain: 40Hz to 10kHz
+                            <br />Range: 0% to 100%
+                        </p>
+                        <p>Edge radius % = (-100/9960) * (freq. HZ) + 100.40161</p>
+                    </div>
+
+                    <button class="map-accordion">Beat > Vibration</button>
+                    <div class="map-panel">
+                        <p>Domain: 0 to 100 vol.
+                            <br />Range: 33 in3 to 123 in3
+                        </p>
+                        <p>In3 = 17.01 * vol. + 27
+                        </p>
+                    </div>
+                    <button class="map-accordion">Feeling -> Texture</button>
+                    <div class="map-panel">
+                        <p>Mapping of feelings to texture will involve rounds of experimentation to determine how to best:
+                        </p>
+                        <ol>
+                            <li>classify emotions of song</li>
+                            <li>map emotion to texture</li>
+                            <li>represent textures through ultrasound waves</li>
+                        </ol>
+                    </div>
+-->
+                </div>
             </div>
         </div>
     </section>
@@ -618,20 +683,20 @@
     <!--/.-->
 
     <script>
-        var acc = document.getElementsByClassName("map-accordion");
-        var i;
-
-        for (i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function() {
-                this.classList.toggle("map-active");
-                var panel = this.nextElementSibling;
-                if (panel.style.maxHeight) {
-                    panel.style.maxHeight = null;
-                } else {
-                    panel.style.maxHeight = panel.scrollHeight + "px";
-                }
-            });
-        }
+        //        var acc = document.getElementsByClassName("map-accordion");
+        //        var i;
+        //
+        //        for (i = 0; i < acc.length; i++) {
+        //            acc[i].addEventListener("click", function() {
+        //                this.classList.toggle("map-active");
+        //                var panel = this.nextElementSibling;
+        //                if (panel.style.maxHeight) {
+        //                    panel.style.maxHeight = null;
+        //                } else {
+        //                    panel.style.maxHeight = panel.scrollHeight + "px";
+        //                }
+        //            });
+        //        }
 
     </script>
 
